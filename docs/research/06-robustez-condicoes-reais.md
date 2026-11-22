@@ -6,12 +6,6 @@ Sistemas que interpretam desenhos capturados por câmera são usados sob variaç
 
 **Palavras-chave:** robustez; condições reais; desenho; visão computacional; avaliação
 
-## Abstract
-
-Camera-assisted drawing systems operate under changes in lighting, paper, and surroundings that are absent from controlled scenes. Evaluating only an ideal condition cannot show which changes accompany a loss of quality or whether different perturbations create similar difficulties. This article proposes a protocol for assessing robustness in everyday conditions without describing internal mechanisms. The framework organizes eight factors: glare, shadow, blur, noise, paper folds or wrinkles, background, paper color, and light source. For each factor, it defines an external observation, qualitative levels, and a way to vary the condition. Evaluation first compares each factor in isolation against a reference and then studies justified combinations. Measures include performance by condition, degradation relative to the reference, sensitivity across levels, and recovery after the scene returns to its initial condition. Tables and diagrams describe the catalog and study design. Since no measurements are available, the article assigns no effects to any factor, sets no acceptable limits, and reserves the results section for future data. The proposal provides a comparable vocabulary for documenting scenarios, uncertainty, and the scope of conclusions.
-
-**Keywords:** robustness; real-world conditions; drawing; computer vision; evaluation
-
 ## 1. Introdução
 
 Uma avaliação feita sob iluminação uniforme, papel plano e fundo simples descreve apenas uma parte das condições em que desenhos são produzidos. Em ambientes cotidianos, a luz pode refletir no papel ou ser parcialmente bloqueada; a folha pode ter textura, cor ou deformação; e objetos próximos podem se confundir com a região de interesse. Além disso, a câmera pode registrar movimento ou perda de nitidez. Essas variações acontecem antes e durante a captura e podem coexistir, embora seus efeitos não sejam necessariamente equivalentes.

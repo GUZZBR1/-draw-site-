@@ -6,12 +6,6 @@ Gravar de forma sistemática condições variadas para avaliar um sistema de des
 
 **Palavras-chave:** simulação; dados sintéticos; validade; avaliação; desenho
 
-## Abstract
-
-Systematically recording varied conditions to evaluate a camera-assisted drawing system can require time, session organization, and access to specific materials and contexts. Synthetic scenes can create controlled and repeatable situations, but they are not automatically equivalent to real captures. This article proposes a framework for determining what a simulation can represent, what it cannot support on its own, and which claims require real evidence. The proposal distinguishes controllable geometry and layouts, appearance and behavior that depend on context, and capture effects whose validity must be checked against real observations. The protocol pairs simulated and real conditions by evaluation question, measures agreement in difficulty ordering, and describes the gap between domains. It also provides for reporting coverage, uncertainty, and cases without a comparable pair. Schematic figures show the condition pair, validation flow, and an illustrative form of agreement. Since no measured data are available, the article does not claim that synthetic scenes represent everyday use or replace real capture. Its contribution is an interpretation criterion for complementing, not replacing, real empirical evidence.
-
-**Keywords:** simulation; synthetic data; validity; evaluation; drawing
-
 ## 1. Introdução
 
 Gravar de forma sistemática condições variadas para avaliar desenho capturado por câmera pode ser caro em tempo e coordenação. Uma equipe precisa planejar tarefas, registrar materiais, obter consentimento quando há participantes e repetir cenas para separar variação ambiental de mudança na atividade. Certas condições, como trocas de página ou combinações específicas de iluminação, podem ocorrer raramente em uso natural. A simulação oferece uma forma de cobrir situações controladas, mas sua conveniência não garante que a aparência ou a dificuldade correspondam ao mundo real.

@@ -6,12 +6,6 @@ A avaliação de um sistema de desenho assistido por câmera pode medir saídas 
 
 **Palavras-chave:** acessibilidade; desenho; interação; diversidade; avaliação
 
-## Abstract
-
-An evaluation of a camera-assisted drawing system may measure technical outputs without showing whether people with diverse needs and contexts can complete the activity. Barriers may arise from dexterity, perception, comprehension, equipment, physical space, or connectivity; the same condition does not affect everyone in the same way. This article proposes an accessibility audit of the digital interface, complemented by an interaction study with inclusively recruited participants. The framework organizes six barrier categories and relates each to criteria and evaluation methods. The protocol combines a review based on WCAG 2.x, drawing sessions, a usability scale, workload assessment, and a semi-structured interview. Recruitment, consent, accommodations, and ethics review are specified before data collection. Tables and figures organize the plan without describing internal mechanisms. Since no participants or usage data are available, the article makes no claim about accessibility, performance, or experience for any group. The proposal makes criteria and barriers observable while limiting conclusions to the people, tasks, materials, and contexts actually studied.
-
-**Keywords:** accessibility; drawing; interaction; diversity; evaluation
-
 ## 1. Introdução
 
 Um sistema de desenho assistido por câmera pode ser usado em diferentes espaços e por pessoas com distintas habilidades, equipamentos e estratégias. Uma avaliação baseada apenas em uma tarefa técnica não mostra se instruções são compreensíveis, se a interação é alcançável ou se o ambiente limita o uso. Acessibilidade não é uma propriedade que possa ser inferida de uma única taxa de acerto; ela envolve pessoas, tarefas, interfaces e contextos.

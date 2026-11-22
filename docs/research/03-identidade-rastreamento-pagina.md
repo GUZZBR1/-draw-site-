@@ -6,12 +6,6 @@ Manter a identidade de uma página ao longo de uma sessão é diferente de perce
 
 **Palavras-chave:** identidade de página; rastreamento; continuidade; incerteza; avaliação
 
-## Abstract
-
-Maintaining a page’s identity throughout a session differs from detecting that a sheet is present in each observation. A page may remain, move, leave the scene temporarily, and return; other sheets may look similar or different. Inadequate decisions can associate drawings from distinct pages or interrupt continuity for the same page. This article proposes an event taxonomy for evaluating these decisions in a camera-assisted drawing system. The classification separates six observable events, three possible decisions—continue, create a distinct identity, or defer—and the consequences of incorrect merging and splitting. The protocol uses annotated sequences, qualitative variations in absence duration, and measures for correct re-identification, merging, splitting, and abstention. Evaluation treats the implementation as a black box and compares visible decisions with an independent reference. Tables and diagrams define events and costs without reporting measured performance. Since no experimental results are available, the article does not claim that any decision is correct in an existing system or define a waiting time. The proposal offers a basis for collecting and reporting continuity, uncertainty, and identity errors in drawing sessions.
-
-**Keywords:** page identity; tracking; continuity; uncertainty; evaluation
-
 ## 1. Introdução
 
 Uma sessão de desenho pode envolver uma única folha que se move ou várias folhas parecidas usadas em sequência. A câmera pode deixar de observar a página por causa de deslocamento, enquadramento, interrupção da atividade ou troca de suporte. Quando uma folha volta a aparecer, uma decisão precisa preservar a continuidade quando se trata da mesma página e evitar misturar conteúdo quando é outra. A situação parece simples enquanto a página está sempre visível, mas torna-se ambígua diante de ausência e semelhança visual.

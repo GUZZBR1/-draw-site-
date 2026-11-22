@@ -6,12 +6,6 @@ A resposta temporal influencia a percepção de controle durante atividades inte
 
 **Palavras-chave:** latência; jitter; interação humano-computador; desenho digital; avaliação temporal
 
-## Abstract
-
-Temporal response influences perceived control during interactive activities, but “speed” alone does not describe the experience of drawing. Human-computer interaction literature distinguishes average delay, variability, missed events, and latency distributions; digital inking studies also show that writing and drawing tasks are not equivalent to simple touch actions. This article proposes a protocol for externally evaluating a camera-assisted drawing system. It defines end-to-end latency, jitter, dropped frames, and distribution summaries, including the median and upper tails, without assuming a universal acceptable level. Measurement relates an observable gesture to the first visible response, while recording instrumental uncertainty and usage conditions. The protocol compares device classes and activities and describes an optional condition with experimentally controlled delay to study perceived sensitivity. A table links each metric to its interpretation and limitations. Conceptual figures present the external measurement chain, an illustrative distribution shape, and the optional test design. Since no data have been collected, the article makes no performance claim about the system; reference values and results remain dependent on empirical study and context.
-
-**Keywords:** latency; jitter; human-computer interaction; digital drawing; temporal evaluation
-
 ## 1. Introdução
 
 Em uma atividade de desenho, a pessoa observa uma marca enquanto move a mão e a ferramenta de escrita. Se a marca visível acompanha o gesto com atraso ou de modo irregular, a relação entre ação e consequência pode parecer menos direta. Essa percepção pode afetar ritmo, precisão, confiança e escolha de estratégia. Entretanto, a resposta temporal é apenas uma dimensão da interação. Uma medida rápida em média pode coexistir com pausas longas, atualizações irregulares ou perda de observações. Avaliações que reportam um único valor central podem, por isso, ocultar situações importantes para a experiência.
@@ -138,8 +132,8 @@ A Figura 2 é apenas um exemplo de forma de apresentação: sua curva não repre
 
 | Campo | Registro futuro |
 |---|---|
-| Distribuição por tarefa e dispositivo | [PENDENTE-DADOS] |
-| Mediana e percentis superiores | [PENDENTE-DADOS] |
+| Distribuição por tarefa e dispositivo | 1 sessão, fonte de vídeo 0, 217 aquisições; tarefa não registrada no log. Fonte: sessão 21/11/2026 15:12 (captures/telemetry.jsonl, relatório captures/session-reports/session-20261121-151230-476-107737-0.json). |
+| Mediana e percentis superiores | Detecção (n = 217): mediana 312,5 ms; p90 519,6 ms; p95 578,9 ms; máximo 739,7 ms. Passagem completa: mediana 633,5 ms; p95 1030,8 ms; máximo 1403,4 ms. Fonte: sessão 21/11/2026 15:12 (captures/telemetry.jsonl, relatório captures/session-reports/session-20261121-151230-476-107737-0.json). |
 | Jitter e atualizações visivelmente ausentes | [PENDENTE-DADOS] |
 | Incerteza e qualidade da gravação | [PENDENTE-DADOS] |
 | Relação com continuidade percebida | [PENDENTE-DADOS] |

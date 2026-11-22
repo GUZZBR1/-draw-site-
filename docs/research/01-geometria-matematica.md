@@ -6,12 +6,6 @@ Mudanças na pose da folha alteram sua posição na imagem e podem deslocar a re
 
 **Palavras-chave:** geometria projetiva; homografia; calibração de câmera; rastreamento planar; erro geométrico
 
-## Abstract
-
-Changes in page pose alter its image position and may displace a drawing representation relative to the paper. Evaluating “spatial stability” requires separating angle, distance, and motion, as well as distinguishing physical error from error relative to page size. This article proposes a protocol to measure these quantities in scenes captured by a camera-assisted drawing system without describing how pose is estimated. The proposal defines stroke displacement, absolute error in millimeters, error normalized by page width, temporal drift, and correspondence failures. A grid crosses orientations, distances, and stationary or moving states, while a generic classical geometric baseline provides comparison under the same conditions. The protocol includes an independent reference, sequence-level analysis, and instrumental uncertainty. Figures present conceptual diagrams only; the curve contains no values. Since no measurements are available, the article makes no stability claim about the system and leaves results pending until an empirical evaluation.
-
-**Keywords:** projective geometry; homography; camera calibration; planar tracking; geometric error
-
 ## 1. Introdução
 
 A folha de papel muda de posição enquanto a pessoa escreve ou desenha. Ela pode girar, aproximar-se ou afastar-se da câmera e deslocar-se durante a captura. A tinta desenhada também ocupa posições relativas à folha que se deseja preservar. Uma avaliação geométrica precisa separar o movimento físico do papel de uma alteração indesejada na representação observada. Sem essa distinção, “estabilidade” pode significar que a página permaneceu imóvel, que o traço pareceu estável na imagem ou que sua posição relativa foi preservada; esses sentidos não são equivalentes.

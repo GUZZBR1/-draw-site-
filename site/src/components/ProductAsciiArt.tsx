@@ -10,8 +10,8 @@ const ALT = 'Um macaco de capacete conversa com um australopiteco sobre uma plan
 // e branco trocado por um cinza suave.
 function lightInk(red: number, green: number, blue: number, ink: string, muted: string, deep = false) {
   if (Math.max(red, green, blue) < 45) return ink;
-  if (luminance([red, green, blue]) > 0.72) return deep ? 'rgb(122, 104, 84)' : muted;
-  if (deep) return inkOnLight(red, green, blue, 0.07, 1.4);
+  if (luminance([red, green, blue]) > 0.72) return deep ? 'rgb(96, 76, 56)' : muted;
+  if (deep) return inkOnLight(red, green, blue, 0.05, 1.7);
   // Mesma paleta do tema escuro, so um pouco mais profunda para ler no papel.
   const tone = (value: number) => Math.round(Math.max(0, Math.min(255, (value * 1.3 + 30) * (deep ? 0.55 : 0.8))));
   return `rgb(${tone(red)}, ${tone(green)}, ${tone(blue)})`;

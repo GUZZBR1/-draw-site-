@@ -6,12 +6,6 @@ Avaliações de sistemas computacionais combinam dados, software, modelos, confi
 
 **Palavras-chave:** reprodutibilidade; rastreabilidade; integridade experimental; pesquisa computacional; avaliação de software
 
-## Abstract
-
-Computational system evaluations combine data, software, models, configurations, infrastructure, and analytical decisions. When these elements are not described sufficiently, readers may struggle to distinguish legitimate variation from undocumented change and to interpret the limits of a result. This article proposes a conceptual traceability protocol for evaluating reproducibility in studies of a camera-assisted drawing system. The proposal organizes records into six groups: data, models and external materials, configuration, environment, execution, and reporting. A checklist links each record to the scientific purpose it serves without prescribing internal system details. The protocol describes a comparison in which an experiment is repeated on different machines and dates, using criteria defined before data collection to classify agreement, divergence, and insufficient evidence. It also distinguishes repetition, replication, and reproduction while recognizing that communities use these terms differently. The article delivers an evaluation structure, descriptive measures, and validity threats to guide future studies. Since no measurements are presented, no degree of reproducibility is attributed to the system; empirical application and the choice of acceptable margins remain pending.
-
-**Keywords:** reproducibility; traceability; research integrity; computational research; software evaluation
-
 ## 1. Introdução
 
 Resultados computacionais dependem de uma cadeia de decisões que começa antes da análise e continua durante a execução e a comunicação. A pergunta de pesquisa determina quais observações interessam. A seleção dos dados, os critérios de inclusão, as versões dos artefatos, as condições de execução e as escolhas analíticas delimitam o que os resultados podem sustentar. Se esses elementos ficam dispersos ou implícitos, uma equipe externa pode encontrar uma conclusão sem conseguir avaliar como ela foi produzida. Essa distância reduz a capacidade de detectar erros, comparar estudos e decidir se uma divergência reflete o fenômeno ou uma mudança no procedimento.

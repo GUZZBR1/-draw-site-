@@ -151,7 +151,7 @@ The conceptual figures of this proposal do not represent data. The curve in Figu
 | Precision and recall by condition | [PENDING-DATA] |
 | Mean overlap and distribution | [PENDING-DATA] |
 | Corner error and annotation uncertainty | [PENDING-DATA] |
-| Time to first detection | [PENDING-DATA] |
+| Time to first detection | 0.35 s after session start (first acquisition, verdict “paper”); sheet recognized at 2.0 s. Source: 2026-11-21 15:12 session (captures/telemetry.jsonl, captures/session-reports/session-20261121-151230-476-107737-0.json). |
 | Comparison with baseline | [PENDING-DATA] |
 
 ## 6. Discussion

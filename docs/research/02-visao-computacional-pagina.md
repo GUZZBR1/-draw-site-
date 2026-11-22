@@ -6,12 +6,6 @@ A localização correta de uma página em uma imagem é condição para que um s
 
 **Palavras-chave:** detecção de páginas; documentos fotografados; visão computacional; avaliação; cenas não controladas
 
-## Abstract
-
-Correctly locating a page in an image is a prerequisite for a camera-assisted drawing system to support paper-based activity, yet everyday scenes vary in lighting, occlusion, framing, background, and motion. Literature on photographed documents provides methods and datasets, but its criteria do not always transfer to an interactive task. This article proposes an evaluation that defines correct detection through region overlap and corner error without imposing a universal value. It organizes scene factors into qualitative levels, proposes a balanced design, and combines precision, recall, mean overlap, geometric error, and time to first detection. The protocol also addresses uncertain annotation, scenes without a reliable reference, and sensitivity analysis for criteria selected before data collection. Figures are planning diagrams, not results. The article contributes concepts, metrics, and a protocol for future studies. Since no empirical data are available, it makes no performance claim and leaves the results fields pending.
-
-**Keywords:** page detection; photographed documents; computer vision; evaluation; uncontrolled scenes
-
 ## 1. Introdução
 
 Localizar a página em uma cena capturada por câmera parece uma tarefa simples enquanto o papel está isolado, plano e totalmente visível. Em uso cotidiano, entretanto, páginas podem aparecer parcialmente, receber sombra, refletir luz, ocupar pequena parte da imagem ou se misturar a fundos com textura. Uma avaliação que conte apenas quadros fáceis pode sugerir desempenho amplo sem testar as condições que motivam o uso. Para comparar sistemas de desenho assistido por câmera, é necessário definir o que conta como página detectada corretamente e como a dificuldade da cena será representada.
@@ -157,7 +151,7 @@ As figuras conceituais desta proposta não representam dados. A curva da Figura 
 | Precisão e recall por condição | [PENDENTE-DADOS] |
 | Sobreposição média e distribuição | [PENDENTE-DADOS] |
 | Erro de cantos e incerteza de anotação | [PENDENTE-DADOS] |
-| Tempo até a primeira detecção | [PENDENTE-DADOS] |
+| Tempo até a primeira detecção | 0,35 s após o início da sessão (primeira aquisição, veredicto “paper”); folha reconhecida em 2,0 s. Fonte: sessão 21/11/2026 15:12 (captures/telemetry.jsonl, relatório captures/session-reports/session-20261121-151230-476-107737-0.json). |
 | Comparação com linha de base | [PENDENTE-DADOS] |
 
 ## 6. Discussão

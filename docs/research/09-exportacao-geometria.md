@@ -6,12 +6,6 @@ Converter um desenho em papel em um artefato digital pode apoiar edição, docum
 
 **Palavras-chave:** exportação; fidelidade geométrica; desenho; interoperabilidade; avaliação
 
-## Abstract
-
-Converting a paper drawing into a digital artifact can support editing, documentation, printing, and integration with other tools. Its usefulness depends on which drawing characteristics remain recognizable after export. “Geometric fidelity” is not a single property: position, scale, stroke width, shape, stroke order, and color can matter differently depending on the use. This article proposes a framework for evaluating these dimensions in a camera-assisted drawing system without describing its internal representation or how the file is produced. The framework relates each aspect to a downstream need and an external measure. The protocol compares reference drawings with exported artifacts re-imported into categories of destination tools, using task-specific tolerances defined before analysis. Tables and figures organize aspects, uses, and compatibility as empty categories. Since no experimental results are available, the article makes no claim about achieved accuracy, preservation, or compatibility. The proposal makes explicit what is compared, for which use, and within what limits, avoiding a universal fidelity criterion.
-
-**Keywords:** export; geometric fidelity; drawing; interoperability; evaluation
-
 ## 1. Introdução
 
 Um desenho em papel pode ser útil além do momento em que foi feito. A pessoa pode querer editar a composição, guardar um registro, imprimir uma cópia ou transferir o conteúdo a outra ferramenta. A passagem para um artefato digital cria uma pergunta de avaliação: quais propriedades precisam permanecer para que o resultado sirva a cada finalidade? Uma imagem visualmente semelhante pode perder informação relevante para edição; uma representação editável pode preservar formas e ainda alterar escala ou cor na impressão.

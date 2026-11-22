@@ -10,10 +10,23 @@ const reduceMotionInitial = () => window.matchMedia('(prefers-reduced-motion: re
 /** Os artigos (propostas de pesquisa) giram numa elipse em volta do título; clicar abre o resumo e a figura. */
 export default function PapersPage() {
   const { lang, tr } = useLang();
+  const [moreOpen, setMoreOpen] = useState(reduceMotionInitial());
+  const [waving, setWaving] = useState(false);
+  const wavedRef = useRef(false);
+  const waveTimer = useRef<number | undefined>(undefined);
+  // Dispara a onda inteira uma única vez; ela termina mesmo que o mouse saia antes.
+  const startWave = () => {
+    setMoreOpen(true);
+    if (wavedRef.current) return;
+    wavedRef.current = true;
+    setWaving(true);
+    waveTimer.current = window.setTimeout(() => { setWaving(false); waveTimer.current = undefined; }, 1300);
+  };
+  useEffect(() => () => window.clearTimeout(waveTimer.current), []);
   // Texto do artigo no idioma atual (PT nos campos base, EN em p.en).
   const copyOf = (p: Paper) => ({ short: tr(p.short, p.en.short), title: tr(p.title, p.en.title), blurb: tr(p.blurb, p.en.blurb) });
   const ringRef = useRef<HTMLDivElement>(null);
-  const moreRef = useRef<HTMLElement>(null);
+  const moreTitleRef = useRef<HTMLSpanElement>(null);
   const [moreSeen, setMoreSeen] = useState(reduceMotionInitial());
   const rotateRef = useRef<((index: number, done: () => void) => void) | null>(null); // gira o anel ate um cartao ficar na frente
   const busy = useRef(false); // enquanto o anel gira, novos cliques esperam
@@ -27,13 +40,13 @@ export default function PapersPage() {
 
   useEffect(() => { openRef.current = open !== null; }, [open]);
 
-  // A seção de subprojetos sai da "neblina" quando entra na tela ao rolar.
+  // A seção de subprojetos sai da "neblina" ao rolar e já faz a onda e abre a descrição, como no hover.
   useEffect(() => {
-    const el = moreRef.current;
+    const el = moreTitleRef.current;
     if (!el || moreSeen) return;
     const io = new IntersectionObserver(([e]) => {
-      if (e.isIntersecting) { setMoreSeen(true); io.disconnect(); }
-    }, { threshold: 0.2 });
+      if (e.isIntersecting && e.intersectionRatio >= 0.9) { setMoreSeen(true); startWave(); io.disconnect(); }
+    }, { threshold: 0.9 });
     io.observe(el);
     return () => io.disconnect();
   }, [moreSeen]);
@@ -60,7 +73,7 @@ export default function PapersPage() {
     let raf = 0;
     let tween: { from: number; to: number; t0: number; dur: number; done: () => void } | null = null;
     const TAU = Math.PI * 2;
-    // Gira no sentido do movimento ate o cartao i chegar na frente (parte de baixo da elipse), depois chama done.
+    // Gira pelo menor caminho ate o cartao i chegar na frente (parte de baixo da elipse), depois chama done.
     const rotateTo = (i: number, done: () => void) => {
       if (reduce.current) {
         angle = Math.PI / 2 - (i / cards.length) * TAU;
@@ -69,9 +82,10 @@ export default function PapersPage() {
         return;
       }
       const base = Math.PI / 2 - (i / cards.length) * TAU;
-      const delta = (((base - angle) % TAU) + TAU) % TAU;
-      if (delta < 0.02 || delta > TAU - 0.02) { done(); return; }
-      tween = { from: angle, to: angle + delta, t0: performance.now(), dur: Math.min(2400, 900 + delta * 350), done };
+      // Menor caminho: vai para o lado (horario ou anti-horario) em que o cartao chega mais perto da frente.
+      const delta = ((((base - angle) % TAU) + TAU + Math.PI) % TAU) - Math.PI;
+      if (Math.abs(delta) < 0.02) { done(); return; }
+      tween = { from: angle, to: angle + delta, t0: performance.now(), dur: Math.min(2400, 900 + Math.abs(delta) * 350), done };
     };
     rotateRef.current = rotateTo;
     const place = () => {
@@ -139,6 +153,8 @@ export default function PapersPage() {
 
   // Clicar em outro artigo: fecha o atual, gira o anel ate ele e so depois o abre.
   const pick = (p: Paper) => {
+    // Mesmo com a pagina rolada para baixo, leva o foco ao centro, onde ficam os papers.
+    ringRef.current?.scrollIntoView({ behavior: reduce.current ? 'auto' : 'smooth', block: 'center' });
     if (open?.n === p.n) { setOpen(null); return; }
     if (busy.current) return;
     busy.current = true;
@@ -207,9 +223,17 @@ export default function PapersPage() {
       </div>
     </main>
 
-    <section className={`papers-more${moreSeen ? ' is-in' : ''}`} ref={moreRef} aria-labelledby="papers-more-title">
+    <section className={`papers-more${moreSeen ? ' is-in' : ''}`} aria-labelledby="papers-more-title">
       <p className="papers-more-kicker">{tr('além dos papers', 'beyond the papers')}</p>
-      <h2 className="papers-more-title" id="papers-more-title">{tr('Subprojetos', 'Subprojects')}</h2>
+      <h2 className={`papers-more-title${waving ? ' is-waving' : ''}`} id="papers-more-title" aria-label={tr('Subprojetos', 'Subprojects')} tabIndex={0} aria-expanded={moreOpen} onMouseEnter={startWave} onFocus={startWave} onClick={startWave}>
+        <span ref={moreTitleRef} style={{ display: 'inline-block' }}>
+          {Array.from(tr('Subprojetos', 'Subprojects')).map((letter, index) => (
+            <span className="wordmark-letter" aria-hidden="true" key={index} style={{ '--i': index } as CSSProperties}>{letter}</span>
+          ))}
+        </span>
+      </h2>
+      <div className={`papers-more-body${moreOpen ? ' is-open' : ''}`} aria-hidden={!moreOpen} inert={!moreOpen}>
+      <div className="papers-more-body-inner">
       <p className="papers-more-lead">
         {tr(
           'Pesquisar o Draw pediu mais do que o próprio Draw: algumas peças ficaram grandes ou independentes o bastante para virar projetos separados. Aqui ficam os que nasceram disso.',
@@ -234,6 +258,8 @@ export default function PapersPage() {
         </span>
         <span className="papers-sub-link">github.com/santleme/hvcam ↗</span>
       </a>
+      </div>
+      </div>
     </section>
     </>
   );

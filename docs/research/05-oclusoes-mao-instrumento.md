@@ -6,12 +6,6 @@ A mão e o instrumento de escrita encobrem a página durante o desenho; essa ocl
 
 **Palavras-chave:** oclusão; interação com caneta; mão; continuidade; avaliação de usabilidade
 
-## Abstract
-
-The hand and writing instrument cover the page during drawing; this occlusion is a normal part of the activity, not an artificial exception to remove from testing. Evaluating its effects requires specifying duration, motion, and covered region, as well as measuring how much of the page is occluded. This article proposes a taxonomy and protocol for studying a camera-assisted drawing system under these conditions. The classification separates brief, intermediate, and long episodes; low, moderate, and broad movement; and occlusion at the edge, center, or combined regions. The occluded fraction is defined as covered area relative to page area, with no fixed acceptance value. The protocol relates each condition to detection, continuity, and recovery time after the hand leaves. Conceptual figures illustrate postures, a condition matrix, and a curve without data. Since no results are available, the article does not claim that occlusion causes failures or describe how the system handles it; these relationships remain for empirical evaluation.
-
-**Keywords:** occlusion; pen interaction; hand; continuity; usability evaluation
-
 ## 1. Introdução
 
 A mão e o instrumento de escrita encobrem parte da página durante o desenho. Essa oclusão é parte normal da atividade e deve ser tratada como condição de uso, não como exceção artificial a eliminar da avaliação. A pessoa posiciona a mão para apoiar o gesto, alcança diferentes regiões do papel e move o instrumento sobre a marca recém-produzida. Oclusão pode durar pouco ou persistir, cobrir a borda ou o centro, e acompanhar movimento pequeno ou amplo. Esses casos impõem exigências distintas para continuidade e recuperação.

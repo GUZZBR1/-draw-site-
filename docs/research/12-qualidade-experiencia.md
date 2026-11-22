@@ -6,12 +6,6 @@ Um sistema de desenho assistido por câmera pode produzir uma resposta visualmen
 
 **Palavras-chave:** qualidade de experiência; continuidade; usabilidade; desenho; interação
 
-## Abstract
-
-A camera-assisted drawing system may produce a visually continuous response in some situations and still fail to match the experience of the person drawing. Technical measures and subjective ratings answer different questions; neither replaces the other. This article organizes four experience dimensions: continuity, predictability, recovery, and perceived control. For each dimension, it proposes an external measure and a questionnaire item to be refined with participants. The protocol combines a drawing task, observable records, an experience questionnaire, usability and workload measures, and an interview in the same session. Descriptive and associative analyses will examine whether technical patterns accompany reported perceptions, without assigning causality or inferring internal mechanisms. The contribution includes a measurement framework, a collection sequence, and limits on interpretation. Since no participant data are available, this article reports no scores, associations, or effects. The proposal requires ethics review, item evaluation, and data collection in defined contexts before it can support conclusions about user experience.
-
-**Keywords:** quality of experience; continuity; usability; drawing; interaction
-
 ## 1. Introdução
 
 Uma atividade de desenho assistida por câmera reúne ações físicas, materiais, observação visual e interpretação do resultado. A pessoa pode perceber continuidade quando o desenho permanece coerente durante a atividade. Também pode notar atraso, oscilação, perda temporária, recuperação demorada ou mudanças inesperadas. Essas percepções são parte da experiência, mas não podem ser deduzidas diretamente de uma única medida técnica. Um registro de resposta regular pode coexistir com uma interação que parece difícil; uma interrupção observada pode ser breve e não afetar o objetivo da pessoa.

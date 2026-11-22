@@ -6,12 +6,6 @@ Em uma atividade de desenho, marcas digitais devem conservar posição, continui
 
 **Palavras-chave:** preservação de tinta; consistência temporal; registro de imagens; desenho; avaliação visual
 
-## Abstract
-
-During drawing, digital marks should preserve position, continuity, and identity as the paper and hand move. The phrase “preserving ink” is too broad to guide evaluation without distinguishing error types. This article operationally defines three discrepancies: displaced strokes, when position diverges from a reference; fragmented strokes, when expected portions disappear; and repeated strokes, when a mark is shown more than once. It proposes measuring them by comparing observations during the activity with an independent scan of the final drawing. The protocol varies paper movement across stationary, small, and large conditions and includes erasure to examine preservation of remaining marks. Distance, coverage, gaps, and duplication metrics are treated separately to avoid an aggregate score that hides differences. Conceptual figures show the three errors, an observation sequence, and an illustrative curve without values. The system is treated as a black box. Since no data are available, the article makes no claim that any error occurs or is prevented; results remain pending until collection and comparison with the reference.
-
-**Keywords:** ink preservation; temporal consistency; image registration; drawing; visual evaluation
-
 ## 1. Introdução
 
 Uma atividade de desenho produz marcas ao longo do tempo. A pessoa acrescenta traços, desloca o papel, cobre parte da cena com a mão, pausa e por vezes apaga trechos. Uma representação digital pode parecer correta em um instante e ainda divergir do desenho ao fim da sessão. A posição de uma linha pode mudar, parte de um traço pode deixar de aparecer ou uma marca pode surgir duplicada. Sem definições operacionais, essas situações ficam agrupadas sob termos vagos como “deriva”, “perda” ou “instabilidade”, dificultando comparação entre estudos.

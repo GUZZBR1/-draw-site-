@@ -132,8 +132,8 @@ Figure 2 is only an example of a presentation form: its curve does not represent
 
 | Field | Future record |
 |---|---|
-| Distribution by task and device | [PENDING-DATA] |
-| Median and upper percentiles | [PENDING-DATA] |
+| Distribution by task and device | 1 session, video source 0, 217 acquisitions; task not recorded in the log. Source: 2026-11-21 15:12 session (captures/telemetry.jsonl, captures/session-reports/session-20261121-151230-476-107737-0.json). |
+| Median and upper percentiles | Detection (n = 217): median 312.5 ms; p90 519.6 ms; p95 578.9 ms; max 739.7 ms. Full pass: median 633.5 ms; p95 1030.8 ms; max 1403.4 ms. Source: 2026-11-21 15:12 session (captures/telemetry.jsonl, captures/session-reports/session-20261121-151230-476-107737-0.json). |
 | Jitter and visibly missing updates | [PENDING-DATA] |
 | Uncertainty and recording quality | [PENDING-DATA] |
 | Relationship with perceived continuity | [PENDING-DATA] |
