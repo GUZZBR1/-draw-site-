@@ -12,13 +12,13 @@ export default function PapersPage() {
   const { lang, tr } = useLang();
   const [moreOpen, setMoreOpen] = useState(reduceMotionInitial());
   const [waving, setWaving] = useState(false);
-  const wavedRef = useRef(false);
+  const waveStarted = useRef(false);
   const waveTimer = useRef<number | undefined>(undefined);
-  // Dispara a onda inteira uma única vez; ela termina mesmo que o mouse saia antes.
+  // Dispara a onda inteira; ela termina mesmo que o mouse saia antes.
   const startWave = () => {
     setMoreOpen(true);
-    if (wavedRef.current) return;
-    wavedRef.current = true;
+    if (waveStarted.current) return; // uma onda só por visita: no primeiro contato ou na revelação
+    waveStarted.current = true;
     setWaving(true);
     waveTimer.current = window.setTimeout(() => { setWaving(false); waveTimer.current = undefined; }, 1300);
   };
@@ -26,7 +26,7 @@ export default function PapersPage() {
   // Texto do artigo no idioma atual (PT nos campos base, EN em p.en).
   const copyOf = (p: Paper) => ({ short: tr(p.short, p.en.short), title: tr(p.title, p.en.title), blurb: tr(p.blurb, p.en.blurb) });
   const ringRef = useRef<HTMLDivElement>(null);
-  const moreTitleRef = useRef<HTMLSpanElement>(null);
+  const moreRef = useRef<HTMLElement>(null);
   const [moreSeen, setMoreSeen] = useState(reduceMotionInitial());
   const rotateRef = useRef<((index: number, done: () => void) => void) | null>(null); // gira o anel ate um cartao ficar na frente
   const busy = useRef(false); // enquanto o anel gira, novos cliques esperam
@@ -42,12 +42,14 @@ export default function PapersPage() {
 
   // A seção de subprojetos sai da "neblina" ao rolar e já faz a onda e abre a descrição, como no hover.
   useEffect(() => {
-    const el = moreTitleRef.current;
+    const el = moreRef.current;
     if (!el || moreSeen) return;
+    // Observa só o texto do título (sem o padding da área de hover nem o da seção): a onda roda com as letras visíveis.
+    const title = el.querySelector('.papers-more-title-text') ?? el;
     const io = new IntersectionObserver(([e]) => {
       if (e.isIntersecting && e.intersectionRatio >= 0.9) { setMoreSeen(true); startWave(); io.disconnect(); }
     }, { threshold: 0.9 });
-    io.observe(el);
+    io.observe(title);
     return () => io.disconnect();
   }, [moreSeen]);
 
@@ -223,10 +225,10 @@ export default function PapersPage() {
       </div>
     </main>
 
-    <section className={`papers-more${moreSeen ? ' is-in' : ''}`} aria-labelledby="papers-more-title">
+    <section className={`papers-more${moreSeen ? ' is-in' : ''}`} ref={moreRef} aria-labelledby="papers-more-title">
       <p className="papers-more-kicker">{tr('além dos papers', 'beyond the papers')}</p>
       <h2 className={`papers-more-title${waving ? ' is-waving' : ''}`} id="papers-more-title" aria-label={tr('Subprojetos', 'Subprojects')} tabIndex={0} aria-expanded={moreOpen} onMouseEnter={startWave} onFocus={startWave} onClick={startWave}>
-        <span ref={moreTitleRef} style={{ display: 'inline-block' }}>
+        <span className="papers-more-title-text">
           {Array.from(tr('Subprojetos', 'Subprojects')).map((letter, index) => (
             <span className="wordmark-letter" aria-hidden="true" key={index} style={{ '--i': index } as CSSProperties}>{letter}</span>
           ))}
